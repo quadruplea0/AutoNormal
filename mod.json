@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0-alpha.2",
+	"geode": "5.0.0-beta.1",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2074",
@@ -8,7 +8,7 @@
 	},
 	"id": "quadruplea0.autonormal",
 	"name": "AutoNormal",
-	"version": "v1.0.1",
+	"version": "v1.0.2",
 	"developer": "quadruplea0",
 	"description": "Completes level normally if its beat in 1 attempt practice mode"
 }
