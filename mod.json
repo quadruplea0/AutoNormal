@@ -10,6 +10,7 @@
     "dependencies": {
 		"geode.node-ids": ">=v1.20.0"
 	},
+	"tags": ["Gameplay", "Enhancement"],
 	"id": "quadruplea0.autonormal",
 	"name": "AutoNormal",
 	"version": "v1.0.3",
