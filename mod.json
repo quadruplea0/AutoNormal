@@ -16,7 +16,7 @@
 	},
 	"id": "quadruplea0.autonormal",
 	"name": "AutoNormal",
-	"version": "v1.0.3",
+	"version": "v1.0.4",
 	"developer": "quadruplea0",
 	"description": "Completes level normally if its beat in 1 attempt practice mode"
 }
