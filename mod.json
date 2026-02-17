@@ -11,6 +11,9 @@
 		"geode.node-ids": ">=v1.20.0"
 	},
 	"tags": ["Gameplay", "Enhancement"],
+	"links": {
+		"source": "https://github.com/quadruplea0/AutoNormal"
+	},
 	"id": "quadruplea0.autonormal",
 	"name": "AutoNormal",
 	"version": "v1.0.3",
