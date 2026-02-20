@@ -5,29 +5,29 @@ using namespace geode::prelude;
 
 class $modify(MyPlayLayer, PlayLayer) {
     struct Fields {
-        int m_sessionAttemptCount = 0;
+        bool m_hasResetInPractice = false;
     };
 
     bool init(GJGameLevel* level, bool useReplay, bool dontSave) {
         if (!PlayLayer::init(level, useReplay, dontSave)) return false;
-        m_fields->m_sessionAttemptCount = 0;
+        m_fields->m_hasResetInPractice = false;
         return true;
     }
 
     void resetLevel() {
+        if (m_isPracticeMode && m_player1 && m_player1->m_isDead) {
+            m_fields->m_hasResetInPractice = true;
+        }
         PlayLayer::resetLevel();
-        m_fields->m_sessionAttemptCount++;
     }
 
     void levelComplete() {
-        if (this->m_isPracticeMode && 
-            m_fields->m_sessionAttemptCount <= 1 && 
-            this->m_player1 && !this->m_player1->m_isDead) {
-            
+        if (this->m_isPracticeMode && !m_fields->m_hasResetInPractice) {
             this->m_isPracticeMode = false;
-            Notification::create("Practice run counted as normal", NotificationIcon::Success)->show();
+            if (Mod::get()->getSettingValue<bool>("ShowPopup")) {
+                Notification::create("Practice run converted to Normal", NotificationIcon::Success)->show();
+            }
         }
-
         PlayLayer::levelComplete();
     }
 };
